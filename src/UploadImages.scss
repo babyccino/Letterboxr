@@ -1,0 +1,42 @@
+input {
+  display: none;
+}
+
+.uploadImages {
+  margin: 20px 0 20px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+hr {
+  border: 0.5px solid #bbbbbb; 
+  margin: 0 10px 0 10px;
+}
+
+.aspectSelector {
+  display: flex;
+  justify-content: space-evenly;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.radioButtons {
+  display: none;
+  
+  & ~ .label {
+    padding: 10px;
+    margin-top: -1px;
+    color: grey
+  }
+  
+  &:checked ~ .label {
+    border-top: 1px solid black;
+    color: black;
+  }
+
+  &:hover ~ .label {
+    cursor: pointer;
+  }
+}

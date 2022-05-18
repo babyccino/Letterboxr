@@ -21,7 +21,7 @@ const LetterBoxedImage = props => {
 			const offset = (height - scaledHeight)/2;
 			context.drawImage(props.img, 0, offset, width, scaledHeight);
 		}
-	}, []);
+	}, [img, width, height]);
 	
 	return <canvas ref={canvasRef} {...props} download={img.title} />;
 }
