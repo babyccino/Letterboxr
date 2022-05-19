@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './UploadImages.scss';
 
-import LetterBoxedImage from './LetterBoxedImage';
+import LetterBoxedImage from '../LetterBoxedImage';
 
 export default function UploadImages() {
 	const [images, setImages] = useState([]);
