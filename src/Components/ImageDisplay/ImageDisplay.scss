@@ -1,0 +1,20 @@
+.imageDisplay {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.imageContainer {
+  position: relative;
+  margin: 10px;
+
+  &:hover button {
+    display: block;
+  }
+}
+
+button {
+  display: none;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}

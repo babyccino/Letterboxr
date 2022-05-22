@@ -1,7 +1,10 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+
+import './ImageDisplay.scss';
 
 import LetterBoxedImage from '../LetterBoxedImage';
+import { deleteImage } from '../../Actions/images';
 
 const ImageDisplay = () => {
 	const images = useSelector(state => state.images.imageList);
@@ -9,23 +12,25 @@ const ImageDisplay = () => {
 
 	const autoAspect = 0.8;
 
-  console.log("images: ", images);
-  console.log("aspect ratio: ", aspectRatio);
-	
-	const renderImages = () => images.map(image =>
-		<div style={{margin: "10px 10px 10px 10px"}} key={image.title}>
-			<LetterBoxedImage 
-				img={image} 
-				width={1080}
-        height={Math.round(aspectRatio === "Auto" ? 1080/autoAspect : 1080/aspectRatio)} 
-				id="canvas"
-				style={{width: "100%", height: "100%"}}
-			/>
-		</div>
+  const dispatch = useDispatch();
+	const renderImages = () => images.map(image => {
+    const onClick = () => dispatch(deleteImage(image.title));
+
+    return (
+      <div className='imageContainer' key={image.title}>
+        <LetterBoxedImage
+          img={image}
+          width={1080}
+          height={Math.round(aspectRatio === "Auto" ? 1080 / autoAspect : 1080 / aspectRatio)}
+          id="canvas"
+          style={{ width: "100%", height: "100%" }} />
+        <button onClick={onClick} >❌</button>
+      </div>);
+    }
 	);
 
 	return (
-    <div style={{display:"grid", gridTemplateColumns: "repeat(3, 33.333333%)"}}>
+    <div className='imageDisplay'>
       {renderImages()}
     </div>
 	);

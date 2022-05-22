@@ -3,7 +3,6 @@ import React, { useRef, useEffect } from 'react'
 const LetterBoxedImage = props => {
 	const canvasRef = useRef(null);
 	const {img, width, height} = props;
-	console.log(props);
 
 	useEffect(() => {
 		const render = () => {
