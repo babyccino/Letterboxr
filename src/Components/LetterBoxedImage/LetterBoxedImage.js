@@ -1,13 +1,19 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
+
+import './LetterBoxedImage.scss';
 
 const LetterBoxedImage = props => {
-	const canvasRef = useRef(null);
 	const {img, width, height} = props;
 
+	const [imgLoaded, setImgLoaded] = useState(img.complete);
+	const canvasRef = useRef(null);
+
 	useEffect(() => {
+		const canvas = canvasRef.current;
+		const context = canvas.getContext('2d');
+
 		const render = () => {
-			const canvas = canvasRef.current;
-			const context = canvas.getContext('2d');
+			setImgLoaded(true);	
 
 			context.fillStyle = '#ffffff';
 			context.fillRect(0, 0, context.canvas.width, context.canvas.height);
@@ -24,16 +30,25 @@ const LetterBoxedImage = props => {
 			}
 		};
 
-		if (img.loaded) render();
+		if (img.complete) render();
 		else {
 			img.onload = () => {
-				img.loaded = true;
 				render();
 			};
 		}
 	});
 	
-	return <canvas ref={canvasRef} {...props} download={img.title} />;
+	return <>
+		<div style={{display: imgLoaded ? "none" : "flex", aspectRatio: width/height}} className="loading">
+			<div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+		</div>
+		<canvas
+			{...props}
+			ref={canvasRef}
+			download={img.title}
+			style={{display: !imgLoaded ? "none" : "block", aspectRatio: width/height}}
+			/>
+	</>
 }
 
-export default LetterBoxedImage
+export default React.memo(LetterBoxedImage)

@@ -22,8 +22,6 @@ const DragDrop = () => {
 
     counter = 0;
 
-    console.log(e.dataTransfer.files);
-
 		dispatch(addImages(e.dataTransfer.files));
 		setDragOver(false);
   };
