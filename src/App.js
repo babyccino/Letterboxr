@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './App.css';
+import './App.scss';
 
 import DragDrop from './Components/DragDrop';
 import ImageDisplay from './Components/ImageDisplay';
@@ -12,7 +12,7 @@ const App = () => (
 		<header className="App-header">
 			<DragDrop />
 			<UploadImages />
-			<div style={{width: '950px'}}>
+			<div className="imageAndRatioSelectorContainer">
 				<AspectRatioSelector />
 				<ImageDisplay />
 			</div>
