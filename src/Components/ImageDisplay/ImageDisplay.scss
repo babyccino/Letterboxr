@@ -4,17 +4,12 @@
 }
 
 .imageContainer {
-  position: relative;
   margin: 10px;
-
-  &:hover button {
-    display: block;
-  }
 }
 
-button {
-  display: none;
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
+@media only screen and (max-width: 768px) {
+  .imageContainer {
+    margin: 0;
+    border: 0.5px solid rgb(238, 238, 238);
+  }
 }
