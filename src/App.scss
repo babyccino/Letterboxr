@@ -12,6 +12,10 @@
 }
 
 @media only screen and (max-width: 1000px) {
+  .App-header {
+    font-size: x-large;
+  }
+
   .imageAndRatioSelectorContainer {
     width: 100%;
   }

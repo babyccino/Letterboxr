@@ -10,7 +10,7 @@ const AspectRatioSelector = () => {
   const onChangeAspect = e => dispatch(changeAspectRatio(e.target.value));
 
   return (
-    <div style={{width: "100%"}}>
+    <div className='aspectRatioSelectorContainer'>
       <hr />
       <div onChange={onChangeAspect} className="aspectSelector">
         <label>

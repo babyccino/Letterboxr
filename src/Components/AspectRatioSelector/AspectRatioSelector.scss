@@ -1,3 +1,8 @@
+.aspectRatioSelectorContainer {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
 hr {
   border: 0.5px solid #9c9c9c; 
   margin: 0 10px 0 10px;
@@ -27,5 +32,11 @@ hr {
 
   &:hover ~ .label {
     cursor: pointer;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .aspectSelector {
+    font-size: x-large;
   }
 }
