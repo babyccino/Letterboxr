@@ -5,39 +5,64 @@
 
 canvas {
   width: 100%;
+}
 
-  &:hover ~ button {
-    display: block;
-  }
+@mixin button {
+  display: none;
+  opacity: 0;
+  position: absolute;
+  bottom: 20px;
 
-  &:hover ~ a {
+  &:hover {
     display: block;
+    opacity: 1;
+    cursor: pointer;
   }
 }
 
 .deleteButton {
-  display: none;
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
+  @include button;
 
-  &:hover {
-    display: block;
-  }
+  right: 25px;
+  background-color: rgba(0,0,0,0);
+  border: none;
+  margin-bottom: 2px;
 }
 
 .saveButton {
-  display: none;
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  width: 20px;
-  background-color: lightgrey;
-  padding: 5px;
-  border: 1px solid black;
-  border-radius: 3px;
+  @include button;
+  
+  left: 25px;
+  width: 30px;
+}
 
+.buttonsContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-image: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,0,0,0) 56%, rgba(255, 255, 255, 0.829) 100%);
+  opacity: 0;
+  transition: opacity 0.5s;
+  
   &:hover {
-    display: block;
+    opacity: 1;
+
+    * {
+      display: block;
+      opacity: 1;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .deleteButton {
+    bottom: 5px;
+    right: 5px;
+  }
+  
+  .saveButton {
+    bottom: 5px;
+    left: 5px;
   }
 }
