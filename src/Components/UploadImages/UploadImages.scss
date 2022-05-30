@@ -18,3 +18,9 @@ $text-color: rgb(45, 48, 49);
     color: white;
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .uploadImages {
+    font-size: smaller;
+  }
+}
