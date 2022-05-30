@@ -15,15 +15,15 @@ hr {
   font-size: 20px;
 }
 
+.label {
+  text-transform: uppercase;
+  padding: 10px;
+  margin-top: -1px;
+  color: grey
+}
+
 .radioButtons {
-  display: none;
-  
-  & ~ .label {
-    text-transform: uppercase;
-    padding: 10px;
-    margin-top: -1px;
-    color: grey
-  }
+  display: none; 
   
   &:checked ~ .label {
     border-top: 1px solid black;
