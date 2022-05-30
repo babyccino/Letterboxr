@@ -2,10 +2,10 @@ import React from 'react';
 
 import './App.scss';
 
-import DragDrop from './Components/DragDrop';
-import ImageDisplay from './Components/ImageDisplay';
-import AspectRatioSelector from './Components/AspectRatioSelector'
-import UploadImages from './Components/UploadImages';
+import DragDrop from '../DragDrop';
+import ImageDisplay from '../ImageDisplay';
+import AspectRatioSelector from '../AspectRatioSelector'
+import UploadImages from '../UploadImages';
 
 const App = () => (
 	<div className="App">
