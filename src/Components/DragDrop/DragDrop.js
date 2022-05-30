@@ -28,7 +28,7 @@ const DragDrop = () => {
 
 	return dragOver ?
     <div
-      role="dragAndDrop"
+      role="input"
       id='dragAndDrop'
       className='dragOver'
       onDrop={onDrop}

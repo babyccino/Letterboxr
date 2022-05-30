@@ -23,7 +23,7 @@ describe('Letter boxed image component', () => {
 
     expect(useDispatchMock).toHaveBeenCalled();
 
-    const deleteButton = getByRole('deleteImage');
+    const deleteButton = getByRole('button');
     deleteButton.click();
 
     expect(dispatchMock).toHaveBeenCalledWith('placeholder');

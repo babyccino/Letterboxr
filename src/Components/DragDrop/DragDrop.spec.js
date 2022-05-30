@@ -24,13 +24,13 @@ describe('Drag drop component', () => {
 
     fireEvent.dragEnter(baseElement);
     
-    const div = getByRole('dragAndDrop');
+    const div = getByRole('input');
     expect(div).toBeInTheDocument();
 
     fireEvent.drop(div, {dataTransfer: {files: 'placeholder'}});
 
     expect(dispatchMock).toHaveBeenCalledWith('placeholder');
     // after files is dropped element should disappear
-    expect(queryByRole('dragAndDrop')).toBeNull();
+    expect(queryByRole('input')).toBeNull();
   });
 });

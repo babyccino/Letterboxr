@@ -18,11 +18,11 @@ describe('Upload images component', () => {
   it('Uploading image dispatches add images action with correct files', () => {
     const dispatchMock = jest.fn();
     useDispatchMock.mockImplementation(() => dispatchMock);
-    const { getByLabelText, getByRole } = render(<UploadImages />);
+    const { getByRole } = render(<UploadImages />);
 
     expect(useDispatchMock).toHaveBeenCalled();
 
-    const input = getByRole('uploadImages');
+    const input = getByRole('input');
     const files = [
       new File(['placeholder0'], 'placeholder0.png', {type: 'image/png'}),
       new File(['placeholder1'], 'placeholder1.png', {type: 'image/png'})

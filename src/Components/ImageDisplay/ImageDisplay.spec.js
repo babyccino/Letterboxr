@@ -29,7 +29,7 @@ describe('Image display component', () => {
     setState(state);
 
     const { getAllByTestId, getAllByRole } = render(<ImageDisplay />);
-    const letterBoxedImageContainers = getAllByRole('imageContainer');
+    const letterBoxedImageContainers = getAllByRole('cell');
 
     expect(letterBoxedImageContainers).toHaveLength(2);
 

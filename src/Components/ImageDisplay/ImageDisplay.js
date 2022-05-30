@@ -12,17 +12,17 @@ const ImageDisplay = () => {
 	const aspectRatio = useSelector(state => state.aspectRatio === "Auto" ? autoAspect : state.aspectRatio);
 
 	const renderImages = () => images.map((image, index) =>
-    <div role='imageContainer' className='imageContainer' key={index}>
+    <div role='cell' className='imageContainer' key={index}>
       <LetterBoxedImage
         img={image}
         width={1080}
         height={Math.round(1080 / aspectRatio)}
-        id="canvas" />
+      />
     </div>
 	);
 
 	return (
-    <div role='imageDisplay' className='imageDisplay'>
+    <div className='imageDisplay'>
       {renderImages()}
     </div>
 	);

@@ -11,7 +11,7 @@ export default function UploadImages() {
 
 	return (
 		<label>
-			<input role="uploadImages" type="file" multiple accept='image/*' onChange={onImageChange} />
+			<input type="file" multiple accept='image/*' onChange={onImageChange} />
 			<div className='uploadImages'>Upload images</div>
 		</label>
 	);
