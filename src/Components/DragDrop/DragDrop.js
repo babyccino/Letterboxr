@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { ReactComponent as UploadingIcon } from "./upload.svg";
 import './DragDrop.scss';
+import { ReactComponent as UploadingIcon } from "./UploadingIcon.svg"; 
 
 import { addImages } from '../../Actions/images';
 
@@ -28,9 +28,11 @@ const DragDrop = () => {
 
 	return dragOver ?
     <div
+      role="dragAndDrop"
       id='dragAndDrop'
       className='dragOver'
-      onDrop={onDrop}>
+      onDrop={onDrop}
+    >
       <UploadingIcon className='uploadingIcon' />
     </div> :
     <></>;

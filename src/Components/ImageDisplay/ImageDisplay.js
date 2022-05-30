@@ -7,24 +7,22 @@ import LetterBoxedImage from '../LetterBoxedImage';
 
 const ImageDisplay = () => {
 	const images = useSelector(state => state.images.imageList);
-	const aspectRatio = useSelector(state => state.aspectRatio);
 
 	const autoAspect = 0.8;
+	const aspectRatio = useSelector(state => state.aspectRatio === "Auto" ? autoAspect : state.aspectRatio);
 
-	const renderImages = () => images.map(image => {
-    return (
-      <div className='imageContainer' key={image.title}>
-        <LetterBoxedImage
-          img={image}
-          width={1080}
-          height={Math.round(aspectRatio === "Auto" ? 1080 / autoAspect : 1080 / aspectRatio)}
-          id="canvas" />
-      </div>);
-    }
+	const renderImages = () => images.map((image, index) =>
+    <div role='imageContainer' className='imageContainer' key={index}>
+      <LetterBoxedImage
+        img={image}
+        width={1080}
+        height={Math.round(1080 / aspectRatio)}
+        id="canvas" />
+    </div>
 	);
 
 	return (
-    <div className='imageDisplay'>
+    <div role='imageDisplay' className='imageDisplay'>
       {renderImages()}
     </div>
 	);
