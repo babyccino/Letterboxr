@@ -9,10 +9,13 @@ import UploadImages from '../UploadImages';
 
 const App = () => (
 	<div className="App">
+		<DragDrop />
 		<header className="App-header">
-			<DragDrop />
-			<UploadImages />
-			<div className="imageAndRatioSelectorContainer">
+			<div className="appContainer">
+				<div className='logoAndUploadButtonContainer'>
+					<div className='logo'>LetterBoxr</div>
+					<UploadImages />
+				</div>
 				<AspectRatioSelector />
 				<ImageDisplay />
 			</div>
