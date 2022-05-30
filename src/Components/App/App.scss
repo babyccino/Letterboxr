@@ -1,14 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
+
 .App-header {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  background: #f7f7f7;
+  background: rgb(228, 230, 231);
 }
 
-.imageAndRatioSelectorContainer {
+.appContainer {
   width: 1000px;
+}
+
+.logoAndUploadButtonContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px;
+}
+
+.logo {
+  padding: 10px;
+  font-size: 30px;
+  font-family: "Roboto Condensed", sans-serif;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -16,7 +30,7 @@
     font-size: x-large;
   }
 
-  .imageAndRatioSelectorContainer {
+  .appContainer {
     width: 100%;
   }
 }

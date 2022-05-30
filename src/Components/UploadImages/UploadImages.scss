@@ -2,10 +2,19 @@ input {
   display: none;
 }
 
+$text-color: rgb(45, 48, 49);
+
 .uploadImages {
-  margin: 20px 0 20px;
+  font-weight: bold;
+  color: $text-color;
+  padding: 10px;
+  border: 1px solid $text-color;
+  border-radius: 3px;
 
   &:hover {
     cursor: pointer;
+
+    background-color: $text-color;
+    color: white;
   }
 }
