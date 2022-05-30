@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
+import PropTypes from "prop-types";
 
 import './LetterBoxedImage.scss';
 
@@ -72,12 +73,18 @@ const LetterBoxedImage = props => {
 				<a role="saveImage" ref={saveRef} className='saveButton'>
 					<SaveButtonIcon />
 				</a>
-				<button role="deleteImage" onClick={onClickDelete} className='deleteButton'>
+				<button onClick={onClickDelete} className='deleteButton'>
 					<DeleteButtonIcon />
 				</button>
 			</div>
 		</div>
 	);
+}
+
+LetterBoxedImage.propTypes = {
+	height: PropTypes.number,
+	width: PropTypes.number,
+	img: PropTypes.instanceOf(Image)
 }
 
 export default React.memo(LetterBoxedImage)
